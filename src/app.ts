@@ -1,12 +1,11 @@
-import express, {Application, Request, Response} from 'express';
+// src/app.ts
+import express from 'express';
+import appealRouter from './routes/appeal.routes';
 
-const app: Application = express();
+const app = express();
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
-app.get('/', (req: Request, res: Response) => {
-    res.send('Hello TypeScript with Node.js!');
-});
+app.use('/api', appealRouter);
 
 export default app;
