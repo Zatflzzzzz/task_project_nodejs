@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  db:
+    image: 'postgres'
+    container_name: test-task
+    ports:
+      - '5343:5432'
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=test-task-db
